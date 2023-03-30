@@ -19,6 +19,7 @@
     margin: 20px;
 }
 .flex-items{
+    cursor:pointer;
     color: aliceblue;
     padding: 20px;
 
@@ -27,4 +28,9 @@
     font-family: 'Roboto Condensed', sans-serif;
     color: aliceblue;
     text-decoration: none;
+}
+.genre{
+    padding-left:30px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color:blue;
 }
