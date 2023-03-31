@@ -35,8 +35,8 @@ window.addEventListener("load", () => {
         })
    
 })
-poster = document.querySelectorAll(".poster")
-poster[0].addEventListener("click",fun)
-function fun(){
-    console.log("I am here");
-}
+// poster = document.querySelectorAll(".poster")
+// poster[0].addEventListener("click",fun)
+// function fun(){
+//     console.log("I am here");
+// }
