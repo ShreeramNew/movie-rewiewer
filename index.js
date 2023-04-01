@@ -1,6 +1,9 @@
 var api_key = "5e186d5ec9a8d492e2da546a55997aea";
 var div = document.querySelector(".poster-container")
-let poster=[];
+var link = "https://api.themoviedb.org/3/movie/popular?api_key=" + api_key + "&language=en-US&page=1";
+var api_key = "5e186d5ec9a8d492e2da546a55997aea";
+var div = document.querySelector(".poster-container")
+// let poster=[];
 // div.innerHTML += `
 // <img src="" alt="new" class="poster">
 // `
@@ -8,7 +11,6 @@ var link = "https://api.themoviedb.org/3/movie/popular?api_key=" + api_key + "&l
 console.log("Fetching");
 var imageURL = "https://image.tmdb.org/t/p/w500"
 var imagePath = []
-
 window.addEventListener("load", () => {
     console.log("Fetching");
     fetch(link)
@@ -27,7 +29,7 @@ window.addEventListener("load", () => {
                 div.innerHTML += `
                     <img src="" alt="new" class="poster">
                 `
-                poster = document.querySelectorAll(".poster")
+                var poster = document.querySelectorAll(".poster")
                 poster[i].src = imageURL + imagePath[i];
               
             }
@@ -35,8 +37,3 @@ window.addEventListener("load", () => {
         })
    
 })
-// poster = document.querySelectorAll(".poster")
-// poster[0].addEventListener("click",fun)
-// function fun(){
-//     console.log("I am here");
-// }

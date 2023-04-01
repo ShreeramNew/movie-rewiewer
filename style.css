@@ -5,6 +5,8 @@
 }
 
 .nav-bar{
+
+  
     padding-top: 15px;
     background:linear-gradient(to left bottom,rgb(228, 62, 20),rgb(252, 8, 0),rgb(34, 52, 151));
     color: rgb(0, 0, 0);
@@ -12,13 +14,14 @@
 }
 .list{
     display:flex;
-    justify-content: end;
+   justify-content:flex-end;
     list-style:none;
 }
 .item{
     margin: 20px;
 }
 .flex-items{
+  
     cursor:pointer;
     color: aliceblue;
     padding: 20px;
@@ -29,8 +32,43 @@
     color: aliceblue;
     text-decoration: none;
 }
-.genre{
-    padding-left:30px;
+
+.poster-container{
+    display: flex;
+    background: black;
+    border: 2px solid green;
+    padding: 15px;
+    overflow-x: scroll;
+
+}
+.genre-container{
+    height: 30px;
+    padding: 0px;
+    display: flex;
     font-family: 'Roboto Condensed', sans-serif;
     color:blue;
+}
+.show-more{
+    height: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color:transparent;
+    border: none;
+    outline: none;
+    color: blue;
+    margin-left: auto;
+    padding-right: 20px;
+    align-self: center;
+}
+
+.genre{
+    align-self: center;
+    color: black;
+    padding-left: 15px;
+    font-size: 15px;
+}
+.poster{
+    padding-right: 20px;
+    width: 100px;
+    height: 100%;
+
 }
