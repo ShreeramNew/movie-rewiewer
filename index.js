@@ -37,3 +37,5 @@ window.addEventListener("load", () => {
         })
    
 })
+
+//Trying to solve merge conflict
