@@ -23,7 +23,9 @@ window.addEventListener("load", () => {
     .then((genrejson)=>{
        let genreList=genrejson.genres;
         if(genreList.length){
-               BuildMoviesSections(genreList[0])
+             genreList.forEach(genre=> {
+                BuildMoviesSections(genre)
+             });  
         }
     })
 
@@ -67,26 +69,27 @@ function BuildMoviesSections(genre){
     let posterDiv=document.createElement('div');
     posterDiv.className="poster-container";
     genreId=genre.id;
+    console.log(genre.id);
     fetch(movieAccordingToGenreId)
     .then((response) => response.json())
     .then((json) => {
-        for (i = 0; i < 1; i++) {
+        console.log(json)
+        for (i = 0; i < 14; i++) {
             let resultArray=json.results;
             console.log("This is Result Arry",resultArray);
             // Fetching Each movie-poster-path
-            // imagePath[i] = json.results[i].poster_path;
+            imagePath= json.results[i].poster_path;
             
-            //Displaying Each movie-poster
-            // let imgTag=document.createElement("img");
-            // imgTag.className="poster";
-            // imgTag.src= imageURL + imagePath[i];
-            // posterDiv.appendChild(imgTag);
-            // imgTag.addEventListener("click",()=>{
-            //             console.log("I am Image")
-            // }) 
+            // Displaying Each movie-poster
+            let imgTag=document.createElement("img");
+            imgTag.className="poster";
+            imgTag.src= imageURL + imagePath[i];
+            posterDiv.appendChild(imgTag);
+            imgTag.addEventListener("click",()=>{
+                        console.log("I am Image")
+            }) 
         }
     })
-
     nonNavBody.appendChild(posterDiv)
 
 
