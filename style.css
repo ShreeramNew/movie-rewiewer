@@ -12,13 +12,13 @@
     color: black
 }
 
-.nav-item-list{
+.nav-item-list {
     display: flex;
     justify-content: flex-end;
     list-style: none;
 }
 
-.nav-item-links{
+.nav-item-links {
     cursor: pointer;
     color: aliceblue;
     padding: 20px;
@@ -26,7 +26,8 @@
     color: aliceblue;
     text-decoration: none;
 }
-.active{
+
+.active {
     font-weight: bold;
 }
 
@@ -83,4 +84,10 @@
 
 .poster:hover {
     transform: scale(1.1);
+}
+
+@media screen and (max-width:700px) {
+    .nav-item-links {
+        padding: 11px;
+    }
 }
