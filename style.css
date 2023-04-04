@@ -1,65 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 
-.body{
+.body {
     margin: 0px;
+    background-color: black;
 }
 
-.nav-bar{
-
-  
-
-  
+.nav-bar {
     padding-top: 15px;
-    background:linear-gradient(to left bottom,rgb(228, 62, 20),rgb(252, 8, 0),rgb(34, 52, 151));
-    color: rgb(0, 0, 0);
+    padding-bottom: 15px;
+    background: linear-gradient(to left bottom, red, rgb(67, 18, 158));
+    color: black
+}
 
+.nav-item-list{
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
 }
-.list{
-    display:flex;
-   justify-content:flex-end;
-   justify-content:flex-end;
-    list-style:none;
-}
-.item{
-    margin: 20px;
-}
-.flex-items{
-  
-  
-    cursor:pointer;
+
+.nav-item-links{
+    cursor: pointer;
     color: aliceblue;
     padding: 20px;
-
-}
-.links{
     font-family: 'Roboto Condensed', sans-serif;
     color: aliceblue;
     text-decoration: none;
 }
+.active{
+    font-weight: bold;
+}
 
-.poster-container{
+.poster-container {
     display: flex;
+    min-height: 100px;
     background: black;
-    border: 2px solid green;
+    border: 2px solid;
     padding: 15px;
     overflow-x: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-.poster-container::-webkit-scrollbar{
+
+.poster-container::-webkit-scrollbar {
     display: none;
 }
-.genre-container{
+
+.genre-container {
     height: 30px;
     padding: 0px;
     display: flex;
     font-family: 'Roboto Condensed', sans-serif;
-    color:blue;
+    color: blue;
 }
-.show-more{
+
+.show-more {
     height: 20px;
     font-family: 'Roboto Condensed', sans-serif;
-    background-color:transparent;
+    background-color: transparent;
     border: none;
     outline: none;
     color: blue;
@@ -68,15 +65,22 @@
     align-self: center;
 }
 
-.genre{
+.genre {
     align-self: center;
-    color: black;
+    color: rgb(255, 255, 255);
     padding-left: 15px;
     font-size: 15px;
 }
-.poster{
+
+.poster {
     padding-right: 20px;
     width: 100px;
     height: 100%;
+    background: transparent url("loading2.svg");
 
+
+}
+
+.poster:hover {
+    transform: scale(1.1);
 }
