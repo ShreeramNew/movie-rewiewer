@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+.body {
+    margin: 0px;
+    background-color: black;
+}
+
+.nav-bar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: linear-gradient(to left bottom, red, rgb(67, 18, 158));
+    color: black
+}
+
+.nav-item-list {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+.nav-item-links {
+    cursor: pointer;
+    color: aliceblue;
+    padding: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.active {
+    font-weight: bold;
+}
+.Poster{
+    border: 2px solid white;
+    display: flex;
+    background-color:black;
+    background-image: url("https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg");
+    height: 70vh;
+    padding-top: 20px;
+    background-repeat: no-repeat;
+    justify-content: center;
+}
+.info-Container{
+    display: flex;
+    flex-direction: column;
+}
+.info{
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;   
+}
+.title{
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;   
+}
+.story{
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;  
+}
+.info-subtitle{
+    font-size: larger;
+    font-weight: bold;
+}
