@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+.body {
+    margin: 0px;
+    background-color: black;
+}
+
+.nav-bar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: linear-gradient(to left bottom, red, rgb(67, 18, 158));
+    color: black
+}
+
+.nav-item-list {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+.nav-item-links {
+    cursor: pointer;
+    color: aliceblue;
+    padding: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.active {
+    font-weight: bold;
+}
+.Movie-Info{
+    /* border: 2px solid white; */
+    margin: 20px;
+    max-width:60%;
+    display: flex;
+    background-color:black;
+}
+.Poster{
+
+    height: 50vh;
+    width: auto;
+}
+.info-Container{
+    padding-left: 20px;
+    display: flex;
+    /* border: 2px solid white; */
+    padding-right: 0px;
+    flex-direction: column;
+}
+.info{
+    font-size: 1.3em;
+    margin-top: 10px;
+    padding-left: 20px;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;   
+}
+.title{
+    font-size: 1.4em;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;   
+}
+.story{
+   
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;  
+}
+.story-alone{
+    font-weight: bold;
+}
+.ratings{
+}
+.year{
+    /* font-size: 1.2em; */
+}
+
+@media screen and (max-width:700px) {
+    .nav-bar {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .nav-item-links {
+        padding: 10px;
+    }
+    .Movie-Info{
+        margin: 8px;
+        padding-right:0px ;
+        max-width:100%;
+        /* border: 2px solid white; */
+        display: flex;
+        background-color:black;
+    }
+    
+    .Poster{
+        margin-top: 30px;
+        margin-right: 0px;
+        height:30vh;
+    }
+    .info-Container{
+        margin-left: 0px;
+        padding-right: 0px;
+        padding-left:0px;
+    }
+    .info{
+        font-size: 1em;
+        margin-top: 9px;
+        padding-left: 20px;
+        color: white;
+        font-family: 'Roboto Condensed', sans-serif;   
+    }
+    .title{
+        font-size:1.2em;
+        padding-top: 10px;
+        margin: 0px;
+    }
+    .story{
+        font-size:0.9em;
+        margin: 0px;
+    }
+    .story-alone{
+        font-size: 1em;
+        font-weight: bold;
+    }
+    .ratings{
+        font-size: 1em;
+    }
+
+    
+}

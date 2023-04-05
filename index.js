@@ -117,5 +117,5 @@ function imageClickHandler(imageIndex) {
         "Poster_Path":imagePath[imageIndex]
     }
     localStorage.setItem("movie_Info",JSON.stringify(movieInfo));
-    location.replace("movie.html");
+    location.replace("movieInfo.html");
 }
