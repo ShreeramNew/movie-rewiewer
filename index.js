@@ -5,7 +5,7 @@ let genreId;
 
 // Links
 let movieAccordingToGenreId = "";
-let genreIdList = "https://api.themoviedb.org/3/genre/movie/list?api_key=" + api_key + "&language=en-US";
+let genreIdListLink = "https://api.themoviedb.org/3/genre/movie/list?api_key=" + api_key + "&language=en-US";
 var popularMovieLink = "https://api.themoviedb.org/3/movie/popular?api_key=" + api_key + "&language=en-US&page=1";
 // References
 let nonNavBody = document.querySelector(".nonNav");
@@ -27,23 +27,18 @@ var imagePath = [];
 let jsonResultOfPopular = []
 
 //On Load
-window.addEventListener("load", () => {
+window.addEventListener("load",async () => {
     BuildMoviesSections("Popular")
-    //This fetches movie according to Genre
-    fetch(genreIdList)
-        .then((response) => response.json())
-        .then((genrejson) => {
-            let genreList = genrejson.genres;
-            if (genreList.length) {
-                genreList.forEach(genre => {
-                    BuildMoviesSections(genre)
-                });
-            }
-        })
-
+    const genreIdResult=await (await fetch(genreIdListLink)).json();
+    let genreList = genreIdResult.genres;
+    if (genreList.length) {
+        genreList.forEach(genre => {
+            BuildMoviesSections(genre);
+        });
+    }
 })
 
-function BuildMoviesSections(genre) {
+async function BuildMoviesSections(genre) {
     if (genre.id == 99 || genre.id == 10749) {
         return
     }
@@ -65,57 +60,64 @@ function BuildMoviesSections(genre) {
     genreTitle.innerHTML = sectionName;
     genreDiv.appendChild(genreTitle);
     nonNavBody.appendChild(genreDiv);
+    console.log(sectionName)
 
     // Build Genre movie-poster section
     let posterDiv = document.createElement('div');
     posterDiv.className = "poster-container";
-    fetch(fetchNowlink)
-        .then((response) => response.json())
-        .then((json) => {
-            for (i = 0; i < 14; i++) {
-                index++;
-                // Fetching Each movies-info
-                console.log(json)
-                imagePath[index] = json.results[i].poster_path;
-                title[index] = json.results[i].title;
-                releaseDate[index] = json.results[i].release_date;
-                story[index] = json.results[i].overview;
-                ratings[index] = json.results[i].vote_average;
-
-                // Displaying Each movie-poster
-                let imgTag = document.createElement("img");
-                imgTag.className = "poster " + index;
-                classListArray = imgTag.classList;
-                imgTag.src = imageURL + imagePath[classListArray[1]];
-                posterDiv.appendChild(imgTag);
-
-                imgTag.addEventListener("click", () => {
-                    classListArray = imgTag.classList;
-                    title[classListArray[1]];
-                    imageClickHandler(classListArray[1]);
-
-                })
-            }
-            let showMore = document.createElement('button');
-            showMore.className = "show-more";
-            showMore.style.color = "white";
-            showMore.innerHTML = "Show more";
-            showMore.addEventListener("click", () => {
-                console.log("Clicked button");
-            })
-            posterDiv.appendChild(showMore);
-
-        })
     nonNavBody.appendChild(posterDiv)
+    try {
+        const fetchResultInJson=await (await fetch(fetchNowlink)).json();
+        const movieResultArray=fetchResultInJson.results;
+        movieResultArray.forEach(movie=>{ index++;
+            // Fetching Each movies-info
+            console.log(fetchResultInJson)
+            imagePath[index] = movie.poster_path;
+            title[index] = movie.title;
+            releaseDate[index] = movie.release_date;
+            story[index] = movie.overview;
+            ratings[index] = movie.vote_average;
+
+            // Displaying Each movie-poster
+            let linkTag=document.createElement("a");
+            linkTag.href="movieInfo.html";
+            let imgTag = document.createElement("img");
+            imgTag.className = "poster " + index;
+            classListArray = imgTag.classList;
+            imgTag.src = imageURL + imagePath[classListArray[1]];
+            linkTag.appendChild(imgTag);
+            posterDiv.appendChild(linkTag);
+
+            imgTag.addEventListener("click", () => {
+                classListArray = imgTag.classList;
+                title[classListArray[1]];
+                imageClickHandler(classListArray[1]);
+
+            })})
+        let showMore = document.createElement('button');
+        showMore.className = "show-more";
+        showMore.style.color = "white";
+        showMore.innerHTML = "Show more";
+        showMore.addEventListener("click", () => {
+            console.log("Clicked button");
+        })
+        posterDiv.appendChild(showMore);
+        console.log("Post Added");
+    } catch (error) {
+        console.log("This is error"+error);
+    }
+
+    //Normal
+   
+
 }
 function imageClickHandler(imageIndex) {
-    let movieInfo={
-        "Title":title[imageIndex],
-        "Story":story[imageIndex],
-        "Release_date":releaseDate[imageIndex],
-        "Ratings":ratings[imageIndex],
-        "Poster_Path":imagePath[imageIndex]
+    let movieInfo = {
+        "Title": title[imageIndex],
+        "Story": story[imageIndex],
+        "Release_date": releaseDate[imageIndex],
+        "Ratings": ratings[imageIndex],
+        "Poster_Path": imagePath[imageIndex]
     }
-    localStorage.setItem("movie_Info",JSON.stringify(movieInfo));
-    location.replace("movieInfo.html");
+    localStorage.setItem("movie_Info", JSON.stringify(movieInfo));
 }
