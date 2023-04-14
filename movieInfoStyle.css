@@ -30,61 +30,72 @@
 .active {
     font-weight: bold;
 }
-.Movie-Info{
+
+.Movie-Info {
     /* border: 2px solid white; */
     margin: 20px;
-    max-width:60%;
+    max-width: 60%;
     display: flex;
-    background-color:black;
+    background-color: black;
 }
-.Poster{
+
+.Poster {
 
     height: 50vh;
     width: auto;
 }
-.info-Container{
+
+.info-Container {
     padding-left: 20px;
     display: flex;
     /* border: 2px solid white; */
     padding-right: 0px;
     flex-direction: column;
 }
-.info{
+
+.info {
     font-size: 1.3em;
     margin-top: 10px;
     padding-left: 20px;
     color: white;
-    font-family: 'Roboto Condensed', sans-serif;   
+    font-family: 'Roboto Condensed', sans-serif;
 }
-.title{
+
+.title {
     font-size: 1.4em;
     color: white;
-    font-family: 'Roboto Condensed', sans-serif;   
+    font-family: 'Roboto Condensed', sans-serif;
 }
-.story{
-   
+
+.story {
+
     color: white;
-    font-family: 'Roboto Condensed', sans-serif;  
+    font-family: 'Roboto Condensed', sans-serif;
 }
-.story-alone{
+
+.story-alone {
     font-weight: bold;
 }
-.ratings{
-}
-.year{
+
+.ratings {}
+
+.year {
     /* font-size: 1.2em; */
 }
-.review-section{
+
+.review-section {
     color: white;
 }
-#review-title{
-    font-family: 'Roboto Condensed', sans-serif;  
+
+#review-title {
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: 1.5em;
     display: inline;
     padding: 10px;
     padding-right: 0%;
 }
-#review-count{
+
+#review-count {
     background-color: rgb(99, 99, 99);
     /* border: 1px solid rgb(255, 255, 255); */
     border-radius: 30px;
@@ -92,47 +103,73 @@
     margin-bottom: px;
     padding: 2px;
 }
-.each-review{
+
+#review-text {
+    background-color: black;
+    color: white;
+    resize: none;
+    min-height: 40px;
+    width: 100%;
+    height: auto;
+    border: none;
+    border-bottom: 1px solid white;
+    font-size:15px;
+    outline: none;
+    padding: 0px;
+    sc
+}
+
+.write-review-container {
+    background-color:rgb(0, 0, 0);
+    margin: 10px;
+    border-radius: 3px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
-    border: 1px solid rgb(255, 255, 255);
-   margin-top: 20px;
     max-width: 70%;
-    margin-top: 20px;
-
+    /* border: 2px solid; */
 }
-.profile-and-comment{
-    display: flex;
-    /* border: 1px solid rgb(255, 255, 255); */
-    max-width: 70%;
 
-}
-.profile-pic{
+.profile-pic {
     height: 40px;
     width: 40px;
-    border-radius:100%;
-    margin-right: 15px;
-    margin-left: 15px;
-    margin-top: 15px;
+    border-radius: 50%;
+    margin: 8px;
+    margin-bottom: 0px;
 }
-.new-review{
-    color: black;
-    outline: none;
-    min-width:80%;
-    min-height: 40px;
-    background-color: rgb(255, 255, 255);
-    padding: 10px;
-}
-.new-review:empty::before{
-    content: attr(data-placeholder);
-    color:grey;
-}
-.review::-webkit-scrollbar{
-    display: none;
-}
-.like-and-reply{
+
+.profile-and-comment {
     display: flex;
-    
+}
+
+.save-cancel-container {
+    display: flex;
+    padding: 10px;
+    margin: 0px;
+    justify-content: flex-end;
+}
+
+.cancel,.save{
+    font-family: 'Roboto Condensed', sans-serif;
+    border-radius: 5px;
+    outline: none;
+}
+
+.cancel{
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 0.5px solid;
+}
+
+.save {
+    background-color: rgb(41, 41, 231);
+    color: white;
+    border: none;
+    padding: 0px 10px;
+    border-radius: 5px;
+}
+.cancel:hover,.save:hover{
+   box-shadow: 1px 2px 1px white ;
 }
 
 @media screen and (max-width:700px) {
@@ -140,52 +177,59 @@
         padding-top: 10px;
         padding-bottom: 10px;
     }
-    
+
     .nav-item-links {
         padding: 10px;
     }
-    .Movie-Info{
+
+    .Movie-Info {
         margin: 8px;
-        padding-right:0px ;
-        max-width:100%;
+        padding-right: 0px;
+        max-width: 100%;
         /* border: 2px solid white; */
         display: flex;
-        background-color:black;
+        background-color: black;
     }
-    
-    .Poster{
+
+    .Poster {
         margin-top: 30px;
         margin-right: 0px;
-        height:30vh;
+        height: 30vh;
     }
-    .info-Container{
+
+    .info-Container {
         margin-left: 0px;
         padding-right: 0px;
-        padding-left:0px;
+        padding-left: 0px;
     }
-    .info{
+
+    .info {
         font-size: 1em;
         margin-top: 9px;
         padding-left: 20px;
         color: white;
-        font-family: 'Roboto Condensed', sans-serif;   
+        font-family: 'Roboto Condensed', sans-serif;
     }
-    .title{
-        font-size:1.2em;
+
+    .title {
+        font-size: 1.2em;
         padding-top: 10px;
         margin: 0px;
     }
-    .story{
-        font-size:0.9em;
+
+    .story {
+        font-size: 0.9em;
         margin: 0px;
     }
-    .story-alone{
+
+    .story-alone {
         font-size: 1em;
         font-weight: bold;
     }
-    .ratings{
+
+    .ratings {
         font-size: 1em;
     }
 
-    
+
 }
