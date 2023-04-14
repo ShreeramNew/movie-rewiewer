@@ -74,6 +74,66 @@
 .year{
     /* font-size: 1.2em; */
 }
+.review-section{
+    color: white;
+}
+#review-title{
+    font-family: 'Roboto Condensed', sans-serif;  
+    font-size: 1.5em;
+    display: inline;
+    padding: 10px;
+    padding-right: 0%;
+}
+#review-count{
+    background-color: rgb(99, 99, 99);
+    /* border: 1px solid rgb(255, 255, 255); */
+    border-radius: 30px;
+    font-size: 15px;
+    margin-bottom: px;
+    padding: 2px;
+}
+.each-review{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(255, 255, 255);
+   margin-top: 20px;
+    max-width: 70%;
+    margin-top: 20px;
+
+}
+.profile-and-comment{
+    display: flex;
+    /* border: 1px solid rgb(255, 255, 255); */
+    max-width: 70%;
+
+}
+.profile-pic{
+    height: 40px;
+    width: 40px;
+    border-radius:100%;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.new-review{
+    color: black;
+    outline: none;
+    min-width:80%;
+    min-height: 40px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+}
+.new-review:empty::before{
+    content: attr(data-placeholder);
+    color:grey;
+}
+.review::-webkit-scrollbar{
+    display: none;
+}
+.like-and-reply{
+    display: flex;
+    
+}
 
 @media screen and (max-width:700px) {
     .nav-bar {
