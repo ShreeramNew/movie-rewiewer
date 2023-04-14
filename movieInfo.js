@@ -30,6 +30,7 @@ window.addEventListener("load",()=>{
     poster.src=imageURL+Info.Poster_Path;
    
 })
+//commit checkling
 text.addEventListener("input",()=>{
     text.style.height=text.scrollHeight+"px";
     reviewContainer.appendChild(buttonsContainer);
@@ -44,7 +45,6 @@ text.addEventListener("input",()=>{
         }
         
     })
-    
 
 });
 
