@@ -11,14 +11,16 @@ const year=document.querySelector(".year");
 let newReview_TextBox=document.getElementById("review-text");
 let buttonsContainer=document.createElement("div");
 buttonsContainer.className="save-cancel-container";
-
+let like_button=document.querySelector(".like-button");
 buttonsContainer.innerHTML=
 `
 <button class="cancel">Cancel</button>
         <button class="save">Save</button>
 `;
-let cancel,save;
 let reviewContainer=document.querySelector(".write-review-container")
+
+//Other
+let like_count=21;
 
 window.addEventListener("load",()=>{
     let str=Info.Release_date;
@@ -28,13 +30,18 @@ window.addEventListener("load",()=>{
   
     ratings.innerHTML="Ratings:"+Info.Ratings;
     poster.src=imageURL+Info.Poster_Path;
+
    
+    like_button.addEventListener("click",()=>{
+        let like_count_holder=document.querySelector(".like-count");
+        like_count_holder.innerHTML=like_count++;
+    })
 })
 //commit checkling
 newReview_TextBox.addEventListener("input",()=>{
     newReview_TextBox.style.height=newReview_TextBox.scrollHeight+"px";
     reviewContainer.appendChild(buttonsContainer);
-    cancel=document.querySelector(".cancel");
+    let cancel=document.querySelector(".cancel");
     cancel.addEventListener("click",()=>{
         newReview_TextBox.value="";
         newReview_TextBox.style.height="40px";
@@ -45,10 +52,10 @@ newReview_TextBox.addEventListener("input",()=>{
         }
         
     })
-    save=document.querySelector(".save");
+    let save=document.querySelector(".save");
     save.addEventListener("click",()=>{
        let reviewText=newReview_TextBox.value;
-       
+ 
     })
     
 

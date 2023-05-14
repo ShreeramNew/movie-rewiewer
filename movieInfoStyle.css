@@ -68,7 +68,6 @@
 }
 
 .story {
-
     color: white;
     font-family: 'Roboto Condensed', sans-serif;
 }
@@ -76,13 +75,6 @@
 .story-alone {
     font-weight: bold;
 }
-
-.ratings {}
-
-.year {
-    /* font-size: 1.2em; */
-}
-
 .review-section {
     color: white;
 }
@@ -119,7 +111,6 @@
 }
 
 .write-review-container {
-  
     background-color:rgb(0, 0, 0);
     margin: 10px;
     border-radius: 3px;
@@ -215,9 +206,9 @@ h4{
     /* column-gap: 10px; */
     margin-bottom: 9px;
 }
-.like{
+.like-button{
     background-color: transparent;
-    border-color: white;
+    border: none;
     padding: 0px;
 }
 .reply{
@@ -281,6 +272,9 @@ h4{
 
     .ratings {
         font-size: 1em;
+    }
+    .showReview-container{
+        max-width: 100%;
     }
 
 
