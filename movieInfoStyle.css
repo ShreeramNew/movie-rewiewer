@@ -144,6 +144,8 @@
     font-family: 'Roboto Condensed', sans-serif;
     border-radius: 5px;
     outline: none;
+    height: 30px;
+    width:60px;
 }
 
 .cancel{
@@ -160,7 +162,7 @@
     border-radius: 5px;
 }
 .cancel:hover,.save:hover{
-   box-shadow: 1px 2px 1px white ;
+   box-shadow:white 0px 0px 10px 0px ;
 }
 .showReview-container{
     /* border: 1px solid white; */
@@ -173,10 +175,9 @@
 .username-review-likeReply-container{
     display:flex ;
     flex-direction: column;
-    /* border: 1px solid white; */
 }
 .username-and-time{
-    /* border: 1px solid white; */
+
     display:flex ;
     color: white;
     font-family: 'Roboto Condensed', sans-serif;
@@ -196,14 +197,11 @@ h4{
     padding-bottom: 0px;
 }
 .show-review{
-    /* border: 1px solid white; */
     color: white;
 }
 .like-and-reply{
-    /* border: 1px solid white; */
     color: white;
     display: flex;
-    /* column-gap: 10px; */
     margin-bottom: 9px;
 }
 .like-button{
