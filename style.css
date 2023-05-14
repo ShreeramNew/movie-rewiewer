@@ -42,12 +42,6 @@ body {
     scrollbar-width: none;
 }
 .poster-container-of-showMore-page{
-    display: flex;
-    /* flex-direction: column; */
-    min-height: 100px;
-    background: black;
-    border: 2px solid;
-    padding: 15px;
     overflow-x:visible;
     flex-wrap: wrap;
     row-gap: 15px;
@@ -64,10 +58,6 @@ body {
     display: flex;
     font-family: 'Roboto Condensed', sans-serif;
     color: blue;
-}
-
-.show-more {
-  
 }
 
 .genre {
@@ -100,5 +90,12 @@ body {
 @media screen and (max-width:700px) {
     .nav-item-links {
         padding: 11px;
+    }
+    .poster{
+        width:107px;
+    }
+    .poster-container-of-showMore-page{
+        padding-right:0px;
+        padding-left: 6px;
     }
 }
