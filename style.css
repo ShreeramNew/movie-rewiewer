@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 
-.body {
+body {
     margin: 0px;
     background-color: black;
 }
@@ -31,7 +31,7 @@
     font-weight: bold;
 }
 
-.poster-container {
+.poster-container, .poster-container-of-showMore-page {
     display: flex;
     min-height: 100px;
     background: black;
@@ -41,7 +41,19 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-
+.poster-container-of-showMore-page{
+    display: flex;
+    /* flex-direction: column; */
+    min-height: 100px;
+    background: black;
+    border: 2px solid;
+    padding: 15px;
+    overflow-x:visible;
+    flex-wrap: wrap;
+    row-gap: 15px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 .poster-container::-webkit-scrollbar {
     display: none;
 }
@@ -55,15 +67,7 @@
 }
 
 .show-more {
-    height: 20px;
-    font-family: 'Roboto Condensed', sans-serif;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    color: blue;
-    margin-left: auto;
-    padding-right: 20px;
-    align-self: center;
+  
 }
 
 .genre {
@@ -77,15 +81,22 @@
     padding-right: 20px;
     width: 100px;
     height: 100%;
-    background: transparent url("loading2.svg");
-
-
+    padding-top: 20px;
 }
 
 .poster:hover {
     transform: scale(1.1);
 }
-
+.showMoreLink{
+    /* border: 2px solid white; */
+    padding-top:50px;
+    /* height: 20px; */
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1em;
+    text-decoration: none;
+    background-color: transparent;
+    color: blue;
+}
 @media screen and (max-width:700px) {
     .nav-item-links {
         padding: 11px;
