@@ -4,12 +4,14 @@ body {
     margin: 0px;
     background-color: black;
 }
-
+*{
+    font-family: 'Roboto Condensed', sans-serif;
+}
 .nav-bar {
     padding-top: 15px;
     padding-bottom: 15px;
     background: linear-gradient(to left bottom, red, rgb(67, 18, 158));
-    color: black
+    color: black;
 }
 
 .nav-item-list {
@@ -20,16 +22,66 @@ body {
 
 .nav-item-links {
     cursor: pointer;
-    color: aliceblue;
+    color: white;
     padding: 20px;
-    font-family: 'Roboto Condensed', sans-serif;
-    color: aliceblue;
     text-decoration: none;
 }
 
 .active {
     font-weight: bold;
 }
+select{
+    background-color: transparent;
+    border:1px solid white;
+    border-radius: 6px;
+    color: white;
+    font-size: large;
+    cursor:pointer;
+    width: 90px;
+}
+option{
+    background-color: black;
+}
+
+/* Style for auto image slider starts:*/
+.slider-container {
+    margin: auto;
+    margin-top: 40px;
+    background-color: black;
+    height: 400px;
+    width: 200px;
+    border-radius: 9px;
+    /* box-shadow: 0px 0px 10px 10px white; */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.slide-image-container {
+    display: flex;
+    transition: all 1s;
+}
+
+.slide-images{
+    height: 300px;
+    /* margin: 10px; */
+}
+.position-representer-container {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+.position-representer{
+    border: 1px solid white;
+    background-color: black;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    margin: 5px;
+    border-radius: 10px;
+}
+/*Image-slider style ended*/
+
 
 .poster-container, .poster-container-of-showMore-page {
     display: flex;
@@ -53,6 +105,7 @@ body {
 }
 
 .genre-container {
+    margin-top: 10px;
     height: 30px;
     padding: 0px;
     display: flex;
