@@ -33,10 +33,13 @@ select{
     color: white;
     font-size: large;
     cursor:pointer;
-    width: 65px;
+    width: 75px;
 }
 option{
     background-color: black;
+}
+option:hover{
+    background-color: rgb(255, 255, 255);
 }
 .Movie-Info {
     /* border: 2px solid white; */
@@ -47,7 +50,6 @@ option{
 }
 
 .Poster {
-
     height: 50vh;
     width: auto;
 }
@@ -95,6 +97,9 @@ option{
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+}
+.watch-trailer:hover{
+    transform: scale(1.04);
 }
 #watch-trailer-link{
     text-decoration: none;
@@ -302,6 +307,16 @@ h4{
     }
     .showReview-container{
         max-width: 100%;
+    }
+    .watch-trailer{
+        width: 70px;
+        height: 70px;
+        margin-left: 20px;
+        padding-right:60px;
+        padding-left: 50px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
     }
 
 
