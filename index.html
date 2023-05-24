@@ -11,13 +11,11 @@
 
 <body>
     <nav class="nav-bar">
-        <ul class="nav-item-list">
-            <li><a class="nav-item-links active" href="/">HOME</a></li>
-            <select id="genre-options" onchange='location="showMore.html"'>
-                <option>Genre</option>
-            </select>
-            <li><a class="nav-item-links" href="signIn.html">SIGN IN</a></li>
-        </ul>
+        <a class="nav-item-links active" href="/">HOME</a>
+        <select id="genre-options" onchange='location="showMore.html"'>
+            <option selected hidden>Genre</option>
+        </select>
+        <a class="nav-item-links" href="signIn.html">SIGN IN</a>
     </nav>
     <div class="container">
         <div class="box"></div>
@@ -25,14 +23,16 @@
 
     <div class="slider-container">
         <div class="slide-image-container">
-            <img class="slide-images" src="https://image.tmdb.org/t/p/w500/qnqGbB22YJ7dSs4o6M7exTpNxPz.jpg" alt="">
-            <img class="slide-images" src="https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg" alt="">
-            <img class="slide-images" src="https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg" alt="">
+
         </div>
         <div class="position-representer-container">
             <div class="position-representer 1"></div>
             <div class="position-representer 2"></div>
             <div class="position-representer 3"></div>
+            <div class="position-representer 4"></div>
+            <div class="position-representer 5"></div>
+            <div class="position-representer 6"></div>
+
         </div>
     </div>
     <div class="nonNav">

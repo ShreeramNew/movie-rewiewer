@@ -8,9 +8,13 @@ let movieAccordingToGenreId = "";
 let genreIdListLink = "https://api.themoviedb.org/3/genre/movie/list?api_key=" + api_key + "&language=en-US";
 let popularMovieLink = "https://api.themoviedb.org/3/movie/popular?api_key=" + api_key + "&language=en-US&page=1";
 let popularTVLink = "https://api.themoviedb.org/3/tv/popular?api_key=" + api_key + "&language=en-US&page=1"
-// References
+
+// Selectors
 let nonNavBody = document.querySelector(".nonNav");
 let select = document.querySelector("#genre-options");
+let slide_image_container = document.querySelector(".slide-image-container");
+
+// slide-image-container
 let fetchNowlink = "";
 
 // Declarations
@@ -29,15 +33,15 @@ let poster = [];
 let imagePath = [];
 let jsonResultOfPopular = [];
 let fetchNowlinkArray = [];
-let Index_of_selected_genre=0;
+let Index_of_selected_genre = 0;
 
 
 
 
 //On Load
 window.addEventListener("load", async () => {
+    Build_Image_Slider();
     BuildMoviesSections("Popular_Movies")
-    // BuildMoviesSections("Popular_TV")
     const genreIdResult = await (await fetch(genreIdListLink)).json();
     let genreList = genreIdResult.genres;
     console.log(genreList)
@@ -47,82 +51,133 @@ window.addEventListener("load", async () => {
         });
     }
 })
+async function Build_Image_Slider() {
+    try {
+        const movieResults_In_Promise = await (await fetch(popularMovieLink)).json()
+        const final_movieResults = movieResults_In_Promise.results;
+        (final_movieResults.slice(0, 6)).forEach((movie) => {
+            index++;
+            // Fetching Each movies-info
+            imagePath[index] = movie.poster_path;
+            title[index] = movie.title;
+            releaseDate[index] = movie.release_date;
+            story[index] = movie.overview;
+            ratings[index] = movie.vote_average;
+
+            // Displaying Each movie-poster
+            let linkTag = document.createElement("a");
+            linkTag.href = "movieInfo.html";
+            let imgTag = document.createElement("img");
+            imgTag.className = "slide-images " + index;
+            imgTag.src = imageURL + imagePath[index];
+            linkTag.appendChild(imgTag);
+            slide_image_container.appendChild(linkTag);
+
+            imgTag.addEventListener("click", (event) => {
+                classList_of_clickked_image = event.currentTarget.classList;
+                imageClickHandler(classList_of_clickked_image[1]);
+
+            })
+        })
+    }
+    catch (error) {
+        console.log(error);
+    }
+
+}
 //script for auto slider starts
-  //Declarations
-  let counter = 0;
-  let timeDelay = 2000;
-  let auto_slider;
+//Declarations
+let counter = 0;
+let timeDelay = 2000;
+let auto_slider;
 
-  //Selectors
-  let position_representer = document.querySelectorAll(".position-representer");
-  let image_container = document.querySelector(".slide-image-container ")
+//Selectors
+let position_representer = document.querySelectorAll(".position-representer");
+let image_container = document.querySelector(".slide-image-container ")
 
-  startAuto_slide();
+startAuto_slide();
 
-  function startAuto_slide() {
-      auto_slider = setInterval(() => {
-          counter++;
-          if (counter == 4) {
-              counter = 1;
-          }
-          console.log(timeDelay);
-          switch (counter + "") {
-              case "1": image_container.style.marginLeft = "0%";
-                  change_backgroundColor(position_representer[0])
-                  changeStyleOf_Others(1)
-                  break;
-              case "2": image_container.style.marginLeft = "-100%";
-                  change_backgroundColor(position_representer[1])
-                  changeStyleOf_Others(2)
-                  break;
-              case "3": image_container.style.marginLeft = "-200%";
-                  change_backgroundColor(position_representer[2])
-                  changeStyleOf_Others(3)
-                  break;
-          }
-      }, timeDelay);
-  }
+function startAuto_slide() {
+    auto_slider = setInterval(() => {
+        counter++;
+        if (counter == 7) {
+            counter = 1;
+        }
+        switch (counter + "") {
+            case "1": image_container.style.marginLeft = "0%";
+                change_backgroundColor(position_representer[0])
+                changeStyleOf_Others(1)
+                break;
+            case "2": image_container.style.marginLeft = "-100%";
+                change_backgroundColor(position_representer[1])
+                changeStyleOf_Others(2)
+                break;
+            case "3": image_container.style.marginLeft = "-200%";
+                change_backgroundColor(position_representer[2])
+                changeStyleOf_Others(3)
+                break;
+            case "4": image_container.style.marginLeft = "-300%";
+                change_backgroundColor(position_representer[3])
+                changeStyleOf_Others(4)
+                break;
+            case "5": image_container.style.marginLeft = "-400%";
+                change_backgroundColor(position_representer[4])
+                changeStyleOf_Others(5)
+                break;
+            case "6": image_container.style.marginLeft = "-500%";
+                change_backgroundColor(position_representer[5])
+                changeStyleOf_Others(6)
+                break;
+        }
+    }, timeDelay);
+}
 
-  function stopAuto_slider() {
-      clearInterval(auto_slider)
-  }
+function stopAuto_slider() {
+    clearInterval(auto_slider)
+}
 
- 
-  position_representer.forEach((representer) => {
-      representer.addEventListener("click", (event) => {
-          stopAuto_slider();
-          let className = event.currentTarget.classList;
-          change_backgroundColor(event.currentTarget)
-          changeStyleOf_Others(className[1]);
-          switch (className[1]) {
-              case "1": image_container.style.marginLeft = "0%";
-                  break;
-              case "2": image_container.style.marginLeft = "-100%";
-                  break;
-              case "3": image_container.style.marginLeft = "-200%";
-                  break;
-          }
-          setTimeout(() => {
-              startAuto_slide();
-          }, 5000);
-      })
-  })
 
-  function changeStyleOf_Others(clicked_index) {
-      position_representer.forEach((representer) => {
-          if (representer.classList.contains(clicked_index)) {
-              return;
-          }
-          else {
-              representer.style.backgroundColor = "black";
-          }
-      })
-  }
+position_representer.forEach((representer) => {
+    representer.addEventListener("click", (event) => {
+        stopAuto_slider();
+        let className = event.currentTarget.classList;
+        change_backgroundColor(event.currentTarget)
+        changeStyleOf_Others(className[1]);
+        switch (className[1]) {
+            case "1": image_container.style.marginLeft = "0%";
+                break;
+            case "2": image_container.style.marginLeft = "-100%";
+                break;
+            case "3": image_container.style.marginLeft = "-200%";
+                break;
+            case "4": image_container.style.marginLeft = "-300%";
+                break;
+            case "5": image_container.style.marginLeft = "-400%";
+                break;
+            case "6": image_container.style.marginLeft = "-500%";
+                break;
+        }
+        setTimeout(() => {
+            startAuto_slide();
+        }, 5000);
+    })
+})
 
-  function change_backgroundColor(element) {
-      element.style.backgroundColor = "white";
-  }
-  //script for auto slider ends
+function changeStyleOf_Others(clicked_index) {
+    position_representer.forEach((representer) => {
+        if (representer.classList.contains(clicked_index)) {
+            return;
+        }
+        else {
+            representer.style.backgroundColor = "black";
+        }
+    })
+}
+
+function change_backgroundColor(element) {
+    element.style.backgroundColor = "white";
+}
+//script for auto slider ends
 
 async function BuildMoviesSections(genre) {
     if (genre.id === 99 || genre.id === 10749 || genre.id === 10752) {
@@ -155,27 +210,27 @@ async function BuildMoviesSections(genre) {
     fetchNowlinkArray[genre_Index] = fetchNowlink;
 
     //Adding options for the drop down list in nav bar
-    
+
     let option = document.createElement("option");
-    option.innerHTML=sectionName;
+    option.innerHTML = sectionName;
     select.appendChild(option);
-    select.addEventListener("change",() => {
-        Index_of_selected_genre=select.selectedIndex-1;
+    select.addEventListener("change", () => {
+        Index_of_selected_genre = select.selectedIndex - 1;
         let genreInfo = {
-            "fetch_link":fetchNowlinkArray[Index_of_selected_genre],
-            "Genre_name":sectionNameArray[Index_of_selected_genre]
+            "fetch_link": fetchNowlinkArray[Index_of_selected_genre],
+            "Genre_name": sectionNameArray[Index_of_selected_genre]
         }
         localStorage.setItem("Genre_info", JSON.stringify(genreInfo));
         console.log(Index_of_selected_genre);
-     })
-    
+    })
+
     // Build Genre movie-poster section
     let posterDiv = document.createElement('div');
     posterDiv.className = "poster-container";
     nonNavBody.appendChild(posterDiv)
     try {
-        const fetchResultInJson = await (await fetch(fetchNowlink)).json();
-        const movieResultArray = fetchResultInJson.results;
+        const fetchResultIn_Promise = await (await fetch(fetchNowlink)).json();
+        const movieResultArray = fetchResultIn_Promise.results;
         movieResultArray.forEach(movie => {
             index++;
             // Fetching Each movies-info
@@ -222,9 +277,6 @@ async function BuildMoviesSections(genre) {
     } catch (error) {
         console.log("This is error" + error);
     }
-
-    //Normal
-
 
 }
 function imageClickHandler(imageIndex) {

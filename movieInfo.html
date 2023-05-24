@@ -11,12 +11,11 @@
 
 <body class="body">
     <nav class="nav-bar">
-        <ul class="nav-item-list">
-            <li><a class="nav-item-links" href="index.html">HOME</a></li>
-            <li><a class="nav-item-links" href="">MOVIE</a></li>
-            <li><a class="nav-item-links" href="webSeies.html">WEB SERIES</a></li>
-            <li><a class="nav-item-links" href="signIn.html">SIGN IN</a></li>
-        </ul>
+        <a class="nav-item-links" href="/">HOME</a>
+        <select id="genre-options" onchange='location="showMore.html"'>
+            <option selected hidden>Genre</option>
+        </select>
+        <a class="nav-item-links" href="signIn.html">SIGN IN</a>
     </nav>
     <div class="Movie-Info">
         <div class="poster-container">
@@ -28,8 +27,14 @@
             <p class="story info"><span class="story-alone">Story:</span>
             </p>
             <h2 class="ratings info"></h2>
+            <a id="watch-trailer-link" href="">
+                <div class="watch-trailer">
+                    <img id="movie-icon" src="image/movie_clip_icon.png" alt="">
+                    <h3 id="watch-trailer-title">Watch&nbspTrailer</h3>
+                </div>
+            </a>
         </div>
-
+       
     </div>
     <div class="review-section">
         <h1 id="review-title">Reviews</h1>
