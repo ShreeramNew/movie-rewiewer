@@ -147,4 +147,10 @@ option{
         padding-right:0px;
         padding-left: 6px;
     }
+    .genre-container{
+        margin-top: 40px;
+    }
+    .position-representer-container{
+        padding: -20px;
+    }
 }

@@ -223,6 +223,9 @@ option:hover{
 h4{
     margin: 0px;
 }
+.reply-title{
+    margin-left:13px ;
+}
 .time{
     color: rgb(218, 218, 218);
     font-size: 15px;
@@ -244,6 +247,7 @@ h4{
     padding: 0px;
 }
 .reply{
+
     margin-left: 10px;
 }
 
